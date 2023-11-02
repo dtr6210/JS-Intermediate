@@ -26,3 +26,16 @@ console.log(sumSalaries(salaries));
 // b) Write a function topEarner(salaries) that calculates and returns the name of the
 // person earning the highest salary.
 
+function topEarner(salaries) {
+  let highestSalary = 0;
+  let highestEarner = "";
+  for (let [name, salary] of Object.entries(salaries)) {
+    if (salary > highestSalary) {
+      highestSalary = salary;
+      highestEarner = name;
+    }
+  }
+  return highestEarner;
+}
+
+console.log(topEarner(salaries));
