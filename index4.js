@@ -23,3 +23,18 @@ function camelCase(cssProp) {
 console.log(camelCase("margin-left"));
 console.log(camelCase("background-image"));
 console.log(camelCase("display"));
+
+
+function camelCase(cssProp) {
+  return cssProp
+  .split("-")
+  .map((word, index) =>
+  index === 0 ? word : word[0].toUpperCase() + word.slice(1)
+  )
+  .join("");
+
+}
+
+console.log(camelCase("margin-left"));
+console.log(camelCase("background-image"));
+console.log(camelCase("display"));
