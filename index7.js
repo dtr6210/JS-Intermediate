@@ -45,7 +45,7 @@ console.log(getOldBooks());
 // to all of the above books, with the value ‘classic’.
 
 function addGenre() {
-    return books.map(book => ({ ...book, Genre: 'Classic'}));
+  return books.map((book) => ({ ...book, Genre: "Classic" }));
 }
 
 console.log(addGenre());
@@ -54,15 +54,22 @@ console.log(addGenre());
 // filter together to return an array of book titles for books written by authors whose
 // names start with authorInitial.
 
-function getTitles(authorInitial){
-    return books.filter(book => book.author.startsWith(authorInitial))
-    return books.map(book => book.title);
+function getTitles(authorInitial) {
+  return books.filter((book) => book.author.startsWith(authorInitial));
+  return books.map((book) => book.title);
 }
 
-console.log(getTitles('A'));
+console.log(getTitles("A"));
 
 // e) (Extension) Write a function latestBook() that uses find and forEach to get the
 // book with the most recent publication date.
 
+function latestBook() {
+  let mostRecentPub = 0;
+  books.forEach((book) => {
+    if (book.year > mostRecentPub) mostRecentPub = book.year;
+  });
+  return books.find((book) => book.year == mostRecentPub);
+}
 
-
+console.log(latestBook());
